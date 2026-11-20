@@ -7999,15 +7999,20 @@ button.game-player:disabled {
 
 .xiangqi-victory-backdrop {
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index: 30;
   padding: 0.75rem;
+  box-sizing: border-box;
 }
 
 @keyframes xqVictoryPop {
@@ -8031,6 +8036,7 @@ button.game-player:disabled {
   max-width: 350px;
   max-height: 94%;
   overflow-y: auto;
+  box-sizing: border-box;
   background: rgba(15, 23, 42, 0.95);
   border: 2px solid #eab308;
   border-radius: 14px;
@@ -8042,6 +8048,7 @@ button.game-player:disabled {
   align-items: center;
   text-align: center;
   gap: 0.65rem;
+  margin: auto;
 }
 
 @keyframes xqGoldShimmer {
