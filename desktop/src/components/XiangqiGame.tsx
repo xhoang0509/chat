@@ -417,108 +417,110 @@ export function XiangqiGame({ ctx }: { ctx: XiangqiCtx }) {
 
         {/* Hiệu ứng Overlay vinh danh người chiến thắng */}
         {game.status === "ended" && winnerPlayer && showVictoryOverlay && (
-          <div className="xiangqi-victory-overlay">
-            <div style={{ fontSize: "2.4rem", filter: "drop-shadow(0 4px 8px rgba(234, 179, 8, 0.4))" }}>
-              {s.is_checkmate ? "⚡" : "🏆"}
-            </div>
-
-            <div className="xiangqi-winner-title">
-              {s.is_checkmate ? "Chiếu Bí Tuyệt Đối!" : "Trận Đấu Kết Thúc!"}
-            </div>
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "0.35rem",
-                background: "rgba(255, 255, 255, 0.08)",
-                padding: "0.6rem 1rem",
-                borderRadius: "10px",
-                width: "100%",
-              }}
-            >
-              <div style={{ position: "relative", display: "inline-block" }}>
-                <Avatar user={ctx.user(winnerPlayer.id)} size={52} />
-                <span
-                  style={{
-                    position: "absolute",
-                    bottom: -2,
-                    right: -2,
-                    backgroundColor: isWinnerRed ? "#dc2626" : "#1e293b",
-                    color: "#fff",
-                    borderRadius: "50%",
-                    width: "20px",
-                    height: "20px",
-                    fontSize: "10px",
-                    fontWeight: "bold",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    border: "2px solid #fff",
-                  }}
-                  title={isWinnerRed ? "Phe Đỏ" : "Phe Đen"}
-                >
-                  {isWinnerRed ? "Đỏ" : "Đen"}
-                </span>
+          <div className="xiangqi-victory-backdrop">
+            <div className="xiangqi-victory-overlay">
+              <div style={{ fontSize: "2.4rem", filter: "drop-shadow(0 4px 8px rgba(234, 179, 8, 0.4))" }}>
+                {s.is_checkmate ? "⚡" : "🏆"}
               </div>
 
-              <div style={{ fontWeight: "bold", fontSize: "1.05rem" }}>
-                {winnerPlayer.name} {winnerPlayer.id === meId ? "(Bạn)" : ""}
+              <div className="xiangqi-winner-title">
+                {s.is_checkmate ? "Chiếu Bí Tuyệt Đối!" : "Trận Đấu Kết Thúc!"}
               </div>
 
-              <div style={{ fontSize: "0.82rem", color: "#fbbf24", fontWeight: 600 }}>
-                {isWinnerRed ? "🔴 Người chơi phe Đỏ" : "⚫ Người chơi phe Đen"} chiến thắng
-              </div>
-            </div>
-
-            <div
-              style={{
-                fontSize: "0.85rem",
-                color: "#e2e8f0",
-                lineHeight: "1.4",
-                backgroundColor: "rgba(0, 0, 0, 0.35)",
-                padding: "0.45rem 0.8rem",
-                borderRadius: "6px",
-                width: "100%",
-              }}
-            >
-              {game.result}
-            </div>
-
-            <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.2rem", width: "100%" }}>
-              <button
-                type="button"
-                className="btn btn-secondary btn-sm"
-                style={{ flex: 1 }}
-                onClick={() => setShowVictoryOverlay(false)}
-                title="Thu nhỏ để xem lại các nước cờ trên bàn"
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "0.35rem",
+                  background: "rgba(255, 255, 255, 0.08)",
+                  padding: "0.6rem 1rem",
+                  borderRadius: "10px",
+                  width: "100%",
+                }}
               >
-                👁️ Xem bàn cờ
-              </button>
+                <div style={{ position: "relative", display: "inline-block" }}>
+                  <Avatar user={ctx.user(winnerPlayer.id)} size={52} />
+                  <span
+                    style={{
+                      position: "absolute",
+                      bottom: -2,
+                      right: -2,
+                      backgroundColor: isWinnerRed ? "#dc2626" : "#1e293b",
+                      color: "#fff",
+                      borderRadius: "50%",
+                      width: "20px",
+                      height: "20px",
+                      fontSize: "10px",
+                      fontWeight: "bold",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      border: "2px solid #fff",
+                    }}
+                    title={isWinnerRed ? "Phe Đỏ" : "Phe Đen"}
+                  >
+                    {isWinnerRed ? "Đỏ" : "Đen"}
+                  </span>
+                </div>
 
-              {ctx.onOpenThread && (
+                <div style={{ fontWeight: "bold", fontSize: "1.05rem" }}>
+                  {winnerPlayer.name} {winnerPlayer.id === meId ? "(Bạn)" : ""}
+                </div>
+
+                <div style={{ fontSize: "0.82rem", color: "#fbbf24", fontWeight: 600 }}>
+                  {isWinnerRed ? "🔴 Người chơi phe Đỏ" : "⚫ Người chơi phe Đen"} chiến thắng
+                </div>
+              </div>
+
+              <div
+                style={{
+                  fontSize: "0.85rem",
+                  color: "#e2e8f0",
+                  lineHeight: "1.4",
+                  backgroundColor: "rgba(0, 0, 0, 0.35)",
+                  padding: "0.45rem 0.8rem",
+                  borderRadius: "6px",
+                  width: "100%",
+                }}
+              >
+                {game.result}
+              </div>
+
+              <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.2rem", width: "100%" }}>
                 <button
                   type="button"
                   className="btn btn-secondary btn-sm"
                   style={{ flex: 1 }}
-                  onClick={ctx.onOpenThread}
-                  title="Mở luồng bình luận của khán giả"
+                  onClick={() => setShowVictoryOverlay(false)}
+                  title="Thu nhỏ để xem lại các nước cờ trên bàn"
                 >
-                  💬 Khán đài {ctx.replyCount ? `(${ctx.replyCount})` : ""}
+                  👁️ Xem bàn cờ
                 </button>
-              )}
 
-              {onOpenLeaderboard && (
-                <button
-                  type="button"
-                  className="btn btn-primary btn-sm"
-                  style={{ flex: 1 }}
-                  onClick={onOpenLeaderboard}
-                >
-                  🏆 Bảng xếp hạng
-                </button>
-              )}
+                {ctx.onOpenThread && (
+                  <button
+                    type="button"
+                    className="btn btn-secondary btn-sm"
+                    style={{ flex: 1 }}
+                    onClick={ctx.onOpenThread}
+                    title="Mở luồng bình luận của khán giả"
+                  >
+                    💬 Khán đài {ctx.replyCount ? `(${ctx.replyCount})` : ""}
+                  </button>
+                )}
+
+                {onOpenLeaderboard && (
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-sm"
+                    style={{ flex: 1 }}
+                    onClick={onOpenLeaderboard}
+                  >
+                    🏆 Bảng xếp hạng
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         )}
