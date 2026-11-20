@@ -3166,6 +3166,7 @@ button {
 }
 .sticker {
   display: inline-flex;
+  -webkit-user-select: none;
   user-select: none;
 }
 /* Sticker emoji cỡ lớn, viền trắng như sticker bóc dán */
@@ -4993,6 +4994,7 @@ button.game-player:disabled {
   border-radius: 6px;
   background: var(--surface);
   overflow: hidden;
+  -webkit-user-select: none;
   user-select: none;
   touch-action: none;
 }
@@ -5099,6 +5101,7 @@ button.game-player:disabled {
   width: 100%;
   max-width: 32rem;
   margin: 0 auto 0.75rem auto;
+  -webkit-user-select: none;
   user-select: none;
 }
 .chess-banner {
@@ -5301,6 +5304,7 @@ button.game-player:disabled {
   justify-content: center;
   z-index: 20;
   backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 .chess-promotion-content {
   background: var(--surface);
@@ -6160,6 +6164,7 @@ button.game-player:disabled {
   box-shadow: 0 10px 28px rgb(0 0 0 / 0.4);
   color: var(--st-text);
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 .st-minimap:hover {
   border-color: rgb(255 201 77 / 0.5);
@@ -6441,6 +6446,7 @@ button.game-player:disabled {
   padding: 1rem;
   background: rgb(3 6 16 / 0.78);
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 .st-map-card,
 .st-help-card {
@@ -6904,6 +6910,7 @@ button.game-player:disabled {
   padding: 1rem;
   background: rgb(2 4 12 / 0.6);
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 .st-task {
   display: grid;
@@ -8070,6 +8077,7 @@ button.game-player:disabled {
 .xiangqi-board-wrapper {
   position: relative;
   display: inline-block;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -8134,6 +8142,7 @@ button.game-player:disabled {
   margin-left: 0.35rem;
   vertical-align: middle;
   line-height: 1.2;
+  -webkit-user-select: none;
   user-select: none;
 }
 .game-role-badge.is-viewer {
@@ -8191,6 +8200,7 @@ button.game-player:disabled {
   color: var(--fg, #1e293b);
   cursor: pointer;
   transition: all 0.15s ease;
+  -webkit-user-select: none;
   user-select: none;
 }
 .game-cheer-chip:hover {
@@ -8234,6 +8244,7 @@ button.game-player:disabled {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--muted);
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -8277,6 +8288,7 @@ button.game-player:disabled {
   white-space: nowrap;
   flex-shrink: 0;
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  -webkit-user-select: none;
   user-select: none;
 }
 

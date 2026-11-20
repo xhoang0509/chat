@@ -76,3 +76,21 @@ make check-spec
 # Chế độ Strict (exit code 1 nếu còn task chưa hoàn thành - dùng cho CI):
 ./scripts/check-specs-backlog.sh --strict
 ```
+
+---
+
+## 5. Bộ Lệnh Xác Thực Toàn Diện & Kiểm Tra Layout UI (Verification Suite)
+
+Đảm bảo chất lượng trước khi mở Pull Request, loại bỏ hoàn toàn các lỗi layout, xung đột transform animation và tràn giao diện:
+
+```bash
+# Bộ xác thực 5 bước toàn diện (SPEC, CSS, Go Tests, Web Build, Server Compile):
+make verify
+# hoặc chạy trực tiếp:
+./scripts/verify-all.sh
+
+# Kiểm tra tĩnh CSS & tính toàn vẹn UI Layout (phát hiện transform collision, overflow clipping):
+make verify-css
+# hoặc:
+./scripts/verify-css.sh --strict
+```

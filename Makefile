@@ -5,10 +5,12 @@
 #   make run       build server rồi chạy
 #   make test      chạy test Go
 #   make check-spec kiểm tra tiến độ SPEC và backlog
+#   make verify-css kiểm tra tĩnh CSS và chống lỗi layout
+#   make verify    bộ xác thực toàn diện (SPEC, CSS, Go, Web)
 
 export PATH := $(HOME)/.cargo/bin:$(PATH)
 
-.PHONY: all web server desktop run test check-spec icons clean giphy-key ai-key install-service install-tunnel route-dns deploy logs status start stop stop-tunnel disable enable
+.PHONY: all web server desktop run test check-spec verify-css verify icons clean giphy-key ai-key install-service install-tunnel route-dns deploy logs status start stop stop-tunnel disable enable
 
 all: server desktop
 
@@ -141,6 +143,12 @@ test:
 
 check-spec:
 	@./scripts/check-specs-backlog.sh
+
+verify-css:
+	@./scripts/verify-css.sh --strict
+
+verify:
+	@./scripts/verify-all.sh
 
 # Tạo lại bộ icon app từ desktop/public/favicon.svg
 icons:

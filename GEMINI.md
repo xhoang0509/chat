@@ -27,10 +27,18 @@ Mỗi khi bắt đầu một session mới hoặc ở turn đầu tiên:
 
 ---
 
-## 3. Quy Chuẩn Kỹ Thuật (Development Guidelines)
+## 3. Quy Chuẩn Kỹ Thuật & Quy Trình 4 Kỹ Năng (4-Stage Engineering Workflow)
+
+Mọi tính năng hoặc sửa lỗi phải tuân thủ nghiêm ngặt chuỗi kỹ năng:
+1. **Brainstorm (`feature-brainstorm`)**: Lập đặc tả `specs/<NAME>_SPEC.md` bằng script `./scripts/create-spec.sh <name>`.
+2. **Implement (`feature-implement`)**: Viết code bám sát checklist trong SPEC.
+3. **Test (`feature-test`)**: Unit tests backend Go (`go test ./...`) và build kiểm tra frontend (`pnpm build`).
+4. **Verify (`feature-verify`)**: Chạy bộ xác thực toàn diện `make verify` (bao gồm `verify-css` chống lỗi layout/overlay/clipping, check SPEC checklist và compile binary). Tuyệt đối không mở PR khi chưa pass `make verify`.
 
 - **Backend**: Go (tuân thủ `go fmt`, kiểm tra lỗi cẩn thận, không nuốt error).
-- **Kiểm thử**: Mọi logic game hoặc hàm xử lý dữ liệu mới bắt buộc có unit test (`*_test.go`). Chạy `go test ./...` để kiểm tra.
+- **Kiểm thử**: Mọi logic game hoặc hàm xử lý dữ liệu mới bắt buộc có unit test (`*_test.go`).
 - **Build**:
   - Build server duy nhất: `make server` (tạo binary `./go-chat`).
   - Build desktop: `make desktop`.
+  - Bộ xác thực toàn diện: `make verify` (hoặc `./scripts/verify-all.sh`).
+  - Kiểm tra CSS tĩnh: `make verify-css` (hoặc `./scripts/verify-css.sh --strict`).

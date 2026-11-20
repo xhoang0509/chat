@@ -61,14 +61,22 @@ Run fast static checks first to catch syntax, type mismatches, and dead code:
    ```
    Ensure all tests pass and there are no data races (`-race`).
 
-### Step 3: Frontend Production Build Check
+### Step 3: Frontend Production Build & CSS Integrity Check
 Always run the complete production build to verify module bundling, CSS assets, and minification:
-```bash
-pnpm -C desktop build
-```
-Verify that:
-- Rollup/Vite finishes with exit code `0`.
-- No broken asset imports or missing dependencies.
+1. **Production Build**:
+   ```bash
+   pnpm -C desktop build
+   ```
+   Verify that Rollup/Vite finishes with exit code `0` and no broken asset imports.
+2. **Automated CSS & UI Layout Verification**:
+   Run the static CSS integrity checker to prevent layout clipping, centering collisions, and missing prefixes:
+   ```bash
+   ./scripts/verify-css.sh --strict
+   ```
+   Ensures:
+   - No `@keyframes` `transform` override on elements centered with `translate(-50%, -50%)`.
+   - Modals and Overlays wrapped in flexbox backdrops with `overflow-y: auto` and `max-height`.
+   - WebKit vendor prefixes present for `backdrop-filter` and `user-select`.
 
 ### Step 4: Edge-Case & Regression Matrix
 Systematically verify the following scenarios:
