@@ -23,7 +23,7 @@ Dự án **Go Chat (Tidebird Chat)**: Hệ thống chat theo kênh cho mạng n�
 Mỗi khi bắt đầu một session mới hoặc ở turn đầu tiên:
 1. **Kiểm tra ngữ cảnh**: Tự động nhận diện nhánh Git hiện tại và trạng thái các file đang sửa đổi (`git status`).
 2. **Quy chuẩn trao đổi**: Trả lời ngắn gọn, súc tích, bằng tiếng Việt. Luôn đính kèm đường dẫn dạng clickable link `[tên_file](file:///đường/dẫn)` khi nhắc đến file.
-3. **Đọc Spec trước khi sửa**: Nếu làm việc liên quan đến Game hoặc Tính năng mới, luôn đọc các file đặc tả trong thư mục `specs/` (ví dụ: `specs/XIANGQI_GAME_SPEC.md`, `specs/CHESS_GAME_SPEC.md`, `specs/LIVE_GAMES_TOPBAR_SPEC.md`, `specs/GAME_VIEWER_THREAD_SPEC.md`). Khi tạo spec mới, bắt buộc lưu vào `specs/` và dùng script `./scripts/create-spec.sh <name>`.
+3. **Đọc Spec trước khi sửa**: Nếu làm việc liên quan đến Game hoặc Tính năng mới, luôn đọc các file đặc tả trong thư mục `specs/` (ví dụ: `specs/XIANGQI_GAME_SPEC.md`, `specs/CHESS_GAME_SPEC.md`, `specs/LIVE_GAMES_TOPBAR_SPEC.md`, `specs/GAME_VIEWER_THREAD_SPEC.md`, `specs/BACKLOG.md`). Khi tạo spec mới, bắt buộc lưu vào `specs/` và dùng script `./scripts/create-spec.sh <name>`. Kiểm tra tiến độ và backlog bất cứ lúc nào bằng `make check-spec` (hoặc `./scripts/check-specs-backlog.sh`).
 
 ---
 

@@ -14,7 +14,8 @@ Mọi tính năng mới, trò chơi tương tác hoặc module kiến trúc ph�
 | 2 | [CHESS_GAME_SPEC.md](file:///Users/hoang.nguyen3/tidebird/chat/specs/CHESS_GAME_SPEC.md) | Game | ✅ Đã triển khai | Trò chơi Cờ Vua 8×8 quốc tế FIDE, nhập thành, phong cấp, bắt tốt qua đường. |
 | 3 | [NOTIFICATION_SOUND_SPEC.md](file:///Users/hoang.nguyen3/tidebird/chat/specs/NOTIFICATION_SOUND_SPEC.md) | Audio | ✅ Đã triển khai | Hệ thống âm thanh thông báo @mention và tin nhắn mới bằng Web Audio API. |
 | 4 | [GAME_VIEWER_THREAD_SPEC.md](file:///Users/hoang.nguyen3/tidebird/chat/specs/GAME_VIEWER_THREAD_SPEC.md) | Feature | ✅ Đã triển khai | Luồng bình luận riêng cho ván cờ (Thread) và định danh Khán giả (`[Viewer]`). |
-| 5 | [LIVE_GAMES_TOPBAR_SPEC.md](file:///Users/hoang.nguyen3/tidebird/chat/specs/LIVE_GAMES_TOPBAR_SPEC.md) | Feature | 📋 Đã duyệt | Ghim thanh các ván cờ đang live ở Topbar và điều hướng cuộn `jumpToMessage`. |
+| 5 | [LIVE_GAMES_TOPBAR_SPEC.md](file:///Users/hoang.nguyen3/tidebird/chat/specs/LIVE_GAMES_TOPBAR_SPEC.md) | Feature | ✅ Đã triển khai | Ghim thanh các ván cờ đang live ở Topbar và điều hướng cuộn `jumpToMessage`. |
+| 6 | [BACKLOG.md](file:///Users/hoang.nguyen3/tidebird/chat/specs/BACKLOG.md) | Backlog | 📋 Đang theo dõi | Danh mục tính năng dự kiến (v2+), ý tưởng phát triển và nợ kỹ thuật (Tech Debt). |
 
 ---
 
@@ -53,3 +54,25 @@ Script sẽ tự động:
 1. Chuẩn hoá tên file thành `specs/<FEATURE_NAME>_SPEC.md`.
 2. Khởi tạo sẵn toàn bộ 7 phần cấu trúc theo chuẩn `feature-brainstorm`.
 3. Điền sẵn các Mermaid diagram mẫu, bảng edge cases và checklist triển khai.
+
+---
+
+## 4. Lệnh Kiểm Tra Tiến Độ SPEC & Backlog Tự Động
+
+Kiểm tra tiến độ thực hiện tất cả các SPEC, thống kê Backlog và quét TODO trong mã nguồn:
+
+```bash
+# Báo cáo trực quan kèm thanh tiến độ:
+make check-spec
+# hoặc chạy trực tiếp script:
+./scripts/check-specs-backlog.sh
+
+# Xem chi tiết các task còn tồn đọng:
+./scripts/check-specs-backlog.sh --details
+
+# Xuất định dạng JSON (cho CI hoặc AI Assistant):
+./scripts/check-specs-backlog.sh --json
+
+# Chế độ Strict (exit code 1 nếu còn task chưa hoàn thành - dùng cho CI):
+./scripts/check-specs-backlog.sh --strict
+```

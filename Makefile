@@ -4,10 +4,11 @@
 #   make desktop   bộ cài app desktop (.deb, AppImage) -> desktop/src-tauri/target/release/bundle/
 #   make run       build server rồi chạy
 #   make test      chạy test Go
+#   make check-spec kiểm tra tiến độ SPEC và backlog
 
 export PATH := $(HOME)/.cargo/bin:$(PATH)
 
-.PHONY: all web server desktop run test icons clean giphy-key ai-key install-service install-tunnel route-dns deploy logs status start stop stop-tunnel disable enable
+.PHONY: all web server desktop run test check-spec icons clean giphy-key ai-key install-service install-tunnel route-dns deploy logs status start stop stop-tunnel disable enable
 
 all: server desktop
 
@@ -137,6 +138,9 @@ enable:
 
 test:
 	go test ./...
+
+check-spec:
+	@./scripts/check-specs-backlog.sh
 
 # Tạo lại bộ icon app từ desktop/public/favicon.svg
 icons:
