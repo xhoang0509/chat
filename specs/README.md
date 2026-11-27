@@ -23,6 +23,11 @@ Mọi tính năng mới, trò chơi tương tác hoặc module kiến trúc ph�
 | 11 | [XIANGQI_BETTING_WALLET_SPEC.md](file:///Users/hoang.nguyen3/tidebird/chat/specs/XIANGQI_BETTING_WALLET_SPEC.md) | Feature | ✅ Đã triển khai | Đặt cược 1v1 Cờ Tướng (escrow), chuyển Xu P2P và lịch sử giao dịch sổ cái. |
 | 12 | [WATCH_PARTY_MUSIC_QUEUE_SPEC.md](file:///Users/hoang.nguyen3/tidebird/chat/specs/WATCH_PARTY_MUSIC_QUEUE_SPEC.md) | Feature | ✅ Đã triển khai | Phòng Nghe nhạc & Xem video YouTube chung theo Queue (bắt buộc bấm Join, cộng tác thêm/xoá/sửa/sắp xếp). |
 | 13 | [RPS_BETTING_SPEC.md](file:///Users/hoang.nguyen3/tidebird/chat/specs/RPS_BETTING_SPEC.md) | Game | ✅ Đã triển khai | Cược xu ảo theo các mức cố định trong Oẳn tù tì; không đủ xu thì không thể tạo hoặc tham gia. |
+| 14 | [FARM_HIRED_HELPER_SPEC.md](FARM_HIRED_HELPER_SPEC.md) | Feature | 📝 Đặc tả | Nông trại: thuê người làm, server tự chạy "Làm hết" mỗi 30 phút cả khi tắt app. |
+| 15 | [FARM_WEATHER_SEASONS_SPEC.md](FARM_WEATHER_SEASONS_SPEC.md) | Feature | 📝 Đặc tả | Nông trại: thời tiết hằng ngày và mùa theo tuần, cây hợp mùa lớn nhanh hơn. |
+| 16 | [FARM_ORCHARD_SOCIAL_SPEC.md](FARM_ORCHARD_SOCIAL_SPEC.md) | Feature | 📝 Đặc tả | Nông trại: hàng xóm tưới / trộm cây ăn quả, Đơn hàng đôi cho cặp kết đôi. |
+| 17 | [FARM_ACHIEVEMENTS_DECOR_SPEC.md](FARM_ACHIEVEMENTS_DECOR_SPEC.md) | Feature | 📝 Đặc tả | Nông trại: thành tích nhiều bậc, huy hiệu, đồ trang trí và điểm đẹp. |
+| 18 | [FARM_WEEKLY_EVENTS_SPEC.md](FARM_WEEKLY_EVENTS_SPEC.md) | Feature | 📝 Đặc tả | Nông trại: sự kiện xoay vòng theo tuần, mốc thưởng, top 3 và bảng xếp hạng. |
 | 12 | [BACKLOG.md](file:///Users/hoang.nguyen3/tidebird/chat/specs/BACKLOG.md) | Backlog | 📋 Đang theo dõi | Danh mục tính năng dự kiến (v2+), ý tưởng phát triển và nợ kỹ thuật (Tech Debt). |
 
 ---

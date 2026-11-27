@@ -15,6 +15,17 @@ Tài liệu này lưu trữ tập trung các tính năng dự kiến, ý tưởn
 | **P2** | **BL-05** | **Bình chọn Dự đoán Người Thắng (Game Prediction)** | Social | `PREDICTION_POLL_SPEC.md` | 💡 Ý tưởng |
 | **P3** | **BL-06** | **AI Phân Tích Thế Cờ Thời Gian Thực (AI Commentary)** | AI | `AI_GAME_COMMENTARY_SPEC.md` | 💡 Ý tưởng |
 | **P3** | **BL-07** | **Âm thanh nước đi tuỳ chỉnh (Custom Soundboard)** | Audio | `CUSTOM_SOUNDBOARD_SPEC.md` | 💡 Ý tưởng |
+| **P1** | **BL-08** | **Nông trại: Người làm thuê (tự động khi tắt app)** | Feature | `FARM_HIRED_HELPER_SPEC.md` | 📝 Đã đặc tả |
+| **P1** | **BL-09** | **Nông trại: Thời tiết & Mùa vụ** | Feature | `FARM_WEATHER_SEASONS_SPEC.md` | 📝 Đã đặc tả |
+| **P2** | **BL-10** | **Nông trại: Hàng xóm & Vườn cây, Đơn hàng đôi** | Social | `FARM_ORCHARD_SOCIAL_SPEC.md` | 📝 Đã đặc tả |
+| **P2** | **BL-11** | **Nông trại: Thành tích & Trang trí** | Feature | `FARM_ACHIEVEMENTS_DECOR_SPEC.md` | 📝 Đã đặc tả |
+| **P2** | **BL-12** | **Nông trại: Sự kiện tuần & Bảng xếp hạng** | Feature | `FARM_WEEKLY_EVENTS_SPEC.md` | 📝 Đã đặc tả |
+
+---
+
+> **Ghi chú BL-08..12 (nông trại):** thứ tự làm đề xuất là BL-08 → BL-09 → BL-10 → BL-11 → BL-12.
+> Số migration trong các spec chỉ là dự kiến, lúc làm lấy số kế tiếp. BL-12 dùng các khoá bump mà
+> BL-11 thêm vào, nên làm BL-11 trước. Nếu làm BL-12 trước thì nó tự thêm các khoá đó.
 
 ---
 
